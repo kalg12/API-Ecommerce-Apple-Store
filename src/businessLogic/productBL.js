@@ -21,7 +21,7 @@ const { listarProductos, nuevoProducto, actualizarProducto, eliminarProducto, bu
   };
 
   const buscarProductosPorCategoria = async (category) => {
-    return await buscarProductosPorCategoria(category);
+    return await buscarPorCategoria(category);
   };
 
   module.exports = {

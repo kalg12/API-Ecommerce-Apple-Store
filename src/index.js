@@ -5,7 +5,7 @@ const app = express();
 const cors = require("cors");
 const dbConnection = require("./config/mongodb");
 const productRoutes = require("./routes/productRoutes");
-
+const userRoutes = require("./routes/userRoutes");
 
 /*  */
 app.use(cors());
@@ -14,6 +14,7 @@ dbConnection();
 
 /* Rutas */
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 4000;
 
