@@ -6,6 +6,7 @@ const cors = require("cors");
 const dbConnection = require("./config/mongodb");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
+const paymentRoutes = require("./routes/paymentsRoutes");
 
 /*  */
 app.use(cors());
@@ -15,6 +16,7 @@ dbConnection();
 /* Rutas */
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/payments", paymentRoutes);
 
 const PORT = process.env.PORT || 4000;
 
