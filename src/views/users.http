@@ -1,0 +1,46 @@
+//variables
+@api = http://localhost:4000/api/users
+@id = 6258b70a059470e56910667d
+
+###get all users
+{{api}}
+
+###get user
+{{api}}/{{id}}
+
+
+###create user
+POST  {{api}}
+Content-Type: application/json
+
+{
+  "name": "John",
+  "lastname": "Doe",
+  "email": "nuevo@emial.com",
+  "password": "123456",
+  "username": "nuevo@emial.com",
+  "role": "USER_ROLE",
+  "phone": "7442873814",
+  "address": "Calle 123"
+
+}
+
+###create user duplicate email
+POST  {{api}}
+Content-Type: application/json
+
+{
+  "name": "Ana",
+  "lastname": "Doe",
+  "email": "nuevo@emial.com",
+  "password": "123456",
+  "username": "nuevo@emial.com",
+  "role": "USER_ROLE",
+  "phone": "7442873814",
+  "address": "Calle 123"
+
+}
+
+
+###delete user
+DELETE {{api}}/{{id}}

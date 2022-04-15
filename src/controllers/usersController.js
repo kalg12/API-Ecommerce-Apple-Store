@@ -18,9 +18,19 @@ const obtener = async (req, res) => {
     }
 }
 
-
 const guardar = async (req, res) => {
     const response = new GenericResponse();
+
+    if (req.body.email) {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            response.messages = CustomMessages.email_exist;
+            response.success = false;
+
+            return res.status(400).json(response);
+        }
+    }
 
     try {
         const errors = validationResult(req);
